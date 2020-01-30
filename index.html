@@ -1,0 +1,48 @@
+<!--Code By WYH2004-->
+<!--Web Site: badapple.wyh2004.top-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Bad Apple</title>
+</head>
+
+<style> 
+body{ text-align:center} 
+.div{ margin:0 auto; width:auto; height:auto} 
+</style> 
+
+<body>
+<img src="ba/1.jpg" id="img" height="auto" width="75%" />
+<br />
+
+<audio controls autoplay>
+  <source src="./ba/BadApple.mp3" type="audio/mpeg">
+  您的浏览器不支持 audio 元素。
+</audio>
+
+<div class="div"> 
+    <font id="ssr" size="6"><span style='white-space:pre;'>fps: 30     frame: 1 / 6575</font>
+        <br />
+    <font size="4">推荐使用微软自带浏览器Edge观看,部分浏览器可能无法自动播放音频(如Chrome)</font>
+</div> 
+</body>
+
+<script>
+    var oImg = document.getElementById('img');
+    var timer = null;
+
+    var oStr = document.getElementById('ssr');
+
+    var i = 2;
+
+    timer = setInterval(function(){
+        oImg.src = 'ba/'+i+'.jpg';
+        oStr.innerHTML="<span style='white-space:pre;'>fps: 30     frame: "+i+" / 6575";
+        i++;
+
+        if(i>6575){clearInterval(timer);}
+
+    },33.333333333);
+</script>
